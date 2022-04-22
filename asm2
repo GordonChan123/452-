@@ -1,1 +1,15 @@
+library(dplyr) 
+library(psych) 
+library(VIM) 
+library(ggplot2) 
+library(corrplot) 
+library(car) 
+library(mlr) 
+library(gridExtra)
+library(Publish)
 
+# Read the Data
+df <- read.csv("default_credit_card.csv",header=TRUE) %>% 
+mutate(default=factor(Y, labels=c("No", "Yes"))) %>% 
+select(-Y) 
+str(df)
