@@ -1,1 +1,14 @@
 
+typeof(dat)
+table(dat$Gender)
+h<- sub("M","1",dat$Gender)
+i<- sub("F","0",h)
+dat$Gender<- i
+table(h,i)
+data$gender <- as.numeric(dat$Gender)
+
+dat[,ageGroup:=cut(Age,
+                        breaks=c(0,30,65,Inf),
+                        include.lowest=TRUE,
+                        labels=c("young","middle aged","ederly"))]
+dat[,table(ageGroup)]
